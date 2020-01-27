@@ -1,0 +1,46 @@
+body { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgb(73,97,218);
+    background: linear-gradient(90deg, rgba(73,97,218,1) 0%, rgba(70,111,252,1) 100%);
+}
+
+
+canvas{
+    align-self: center;
+    justify-content: center;
+}
+
+.gem-container{
+    align-self: center;
+}
+
+.image-container {
+    align-self: center;
+    order: 1;
+}
+
+.player-img {
+    margin-right: 35px;
+}
+
+.gem {
+width: 50px;
+/* margin-left: 50px; */
+}
+
+.number{
+display: inline-block;
+font-weight: bolder;
+color: white;
+font-size: 2rem;;
+width: 50px;
+text-align: center;
+}
+
+.winning{
+    background-color: white;
+    text-align: center;
+    visibility: hidden;
+}
