@@ -11,8 +11,9 @@ class Enemy {
     update(dt) {
         // dt ensure the game runs at the same speed for
         this.x = this.x + this.speed * dt;
-        if (float2int(this.x - 50) === player.x || float2int(this.x + 50) === player.x || float2int(this.x) === player.x) {
-            if (this.y - 50 === player.y || this.y + 50 === player.y || this.y === player.y) {
+        if (float2int(this.x - 100) === player.x || float2int(this.x + 100) === player.x || float2int(this.x) === player.x) {
+            if (this.y - 100 === player.y || this.y + 100 === player.y || this.y === player.y) {
+                console.log(float2int(this.x),this.y);
                 player.rest();
                 resetPrizes();
             }
@@ -133,10 +134,10 @@ const prizes = new Array();
 resetPrizes();
 
 const allEnemies = new Array();
-allEnemies[0] = new Enemy(-500, 50, getRandomNum800());
+allEnemies[0] = new Enemy(-500, 100, getRandomNum800());
 allEnemies[1] = new Enemy(-600, 100, getRandomNum800());
 allEnemies[2] = new Enemy(-100, 200, getRandomNum800());
-allEnemies[3] = new Enemy(-300, 50, getRandomNum800());
+allEnemies[3] = new Enemy(-300, 0, getRandomNum800());
 
 const result = document.querySelector('.result');
 
@@ -173,9 +174,9 @@ playerOptions.addEventListener('click', function (e) {
 });
 
 setInterval(function () {
-    allEnemies.push(new Enemy(-100, 50, getRandomNum800()));
-    allEnemies.push(new Enemy(-400, 100, getRandomNum800()));
-    allEnemies.push(new Enemy(-300, 200, getRandomNum800()));
+    allEnemies.push(new Enemy(-100, 0, getRandomNum800()));
+    allEnemies.push(new Enemy(-400, 200, getRandomNum800()));
+    allEnemies.push(new Enemy(-300, 100, getRandomNum800()));
 }, 5000);
 
 function float2int(value) {
